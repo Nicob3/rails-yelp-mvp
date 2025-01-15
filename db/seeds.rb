@@ -7,3 +7,23 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+puts "Roomba is cleaning the database"
+puts "."
+puts ".."
+puts "..."
+puts "...."
+puts "....."
+Restaurant.destroy_all
+
+puts"Creating restaurants"
+dishoom = {name: "Dishoom", address: "7 Boundary St, London E2 7JE", phone_number: "08 80 800 000", category: "chinese"}
+pizza_east =  {name: "Pizza East", address: "56A Shoreditch High St, London E1 6PQ", phone_number: "08 70 800 000", category: "italian"}
+petit_restaurant = {name: "le petit restaurant", address: "avenue du diamant, Bruxelles", phone_number: "08 60 800 000", category: "belgian"}
+buones_manieres = {name: "les buones manieres", address: "avenue de Tervueren, Bruxelles", phone_number: "08 50 800 000", category: "italian"}
+tir_bouchon = {name: "le tir bouchon", address: "Versailles", phone_number: "08 40 800 000", category: "french"}
+
+[dishoom, pizza_east, petit_restaurant, buones_manieres, tir_bouchon].each do |attributes|
+  restaurant = Restaurant.create!(attributes)
+  puts "Created #{restaurant.name}"
+end
+puts "done"
